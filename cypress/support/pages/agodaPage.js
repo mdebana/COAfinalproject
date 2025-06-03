@@ -79,6 +79,12 @@ class AgodaPage {
 			.find('[data-component="mob-flight-price-total-desc"]').children();
 	}
 
+	clickAddons() {
+		cy.contains("Continue to add-ons", { timeout: 10000 })
+			.should("be.visible")
+			.click({ force: true });
+	}
+
 	fillContactDetails(passenger) {
 		cy.get('[id="contact.contactFirstName"]').clear().type(passenger.firstName);
 		cy.get('[id="contact.contactLastName"]').clear().type(passenger.lastName);
@@ -100,10 +106,6 @@ class AgodaPage {
 		cy.get('[data-testid="flight.forms.i0.units.i0.passportExpiryDate-MonthInputDataTestId"]').should("be.visible").click();
 		cy.get('span').contains("January").click();
 		cy.get('[data-testid="flight.forms.i0.units.i0.passportExpiryDate-YearInputDataTestId"]').should("be.visible").type("2030");
-	}
-
-	clickAddons() {
-		cy.contains("Continue to add-ons").click({ force: true });
 	}
 
 	clickProtection() {
