@@ -92,7 +92,7 @@ class AgodaPage {
 		cy.get('span').contains("June").click();
 		cy.get('[data-testid="flight.forms.i0.units.i0.passengerDateOfBirth-YearInputDataTestId"]').clear().type("1997");
 		cy.get('[data-testid="flight.forms.i0.units.i0.passengerNationality"]').click();
-		cy.get('span').contains("Indonesia").click();/*
+		cy.get('span').contains("Indonesia").click({ force: true });/*
 		cy.get('[id="flight.forms.i0.units.i0.passportNumber"]').should("be.visible").type(passenger.passport);
 		cy.get('[data-testid="flight.forms.i0.units.i0.passportCountryOfIssue"]').should("be.visible").click();
 		cy.get('span').contains("Indonesia").click();
