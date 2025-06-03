@@ -107,7 +107,7 @@ class AgodaPage {
 	}
 
 	clickProtection() {
-		cy.contains("No, thanks, I’ll risk it.").click();
+		cy.contains('[data-testid="radio-button-text-option-no"]').click();
 	}
 
 	clickContinuePay() {
