@@ -115,7 +115,7 @@ class AgodaPage {
 	}
 
 	clickNoUpgrade() {
-		cy.get('[data-component="last-chance-decline-button"]',{ timeout: 10000 })
+		cy.contains("button", "No, thanks", { timeout: 10000 })
 			.should("be.visible")
 			.click({ force: true });
 	}
