@@ -107,7 +107,7 @@ class AgodaPage {
 	}
 
 	clickProtection() {
-		cy.contains('[data-testid="radio-button-text-option-no"]', { timeout: 10000 }).click();
+		cy.get('[data-testid="radio-button-text-option-no"]', { timeout: 10000 }).click();
 	}
 
 	clickContinuePay() {
