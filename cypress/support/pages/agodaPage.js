@@ -107,7 +107,7 @@ class AgodaPage {
 	}
 
 	clickProtection() {
-		cy.contains("No, thanks, I’ll risk it.").click();
+		cy.contains("No, thanks, I’ll risk it.").click({ force: true });
 	}
 
 	clickContinuePay() {
