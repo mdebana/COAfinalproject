@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-03T20:20:39.448Z",
+    "end": "2025-06-03T20:20:56.226Z",
+    "duration": 16778,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "51d9c5de-74e6-4281-b11a-17b8ce12025d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\youtube.cy.js",
+      "file": "cypress\\e2e\\youtube.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6381f9a2-d554-4fb0-ba5b-2bdcf8b24cb8",
+          "title": "Youtube Web Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verifying trending video number 3 on Youtube",
+              "fullTitle": "Youtube Web Test Verifying trending video number 3 on Youtube",
+              "timedOut": null,
+              "duration": 13921,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\youtube.cy.js\"\n}",
+              "code": "let expectedTitle, expectedChannel, resultTitle, resultChannel;\n_youtubePage.default.visiting();\ncy.wait(1000);\n_youtubePage.default.clickTrending();\ncy.wait(1000);\n_youtubePage.default.clickMovies();\ncy.wait(2000);\n_youtubePage.default.getVideo(2).as(\"selected\");\n_youtubePage.default.getTitle(\"@selected\").invoke(\"text\").then(text => {\n  expectedTitle = text.replace('kr', '').replace('\\u00A0', '').trim();\n  cy.log(\"Captured title:\", expectedTitle);\n});\n_youtubePage.default.getChannel(\"@selected\").invoke(\"text\").then(text => {\n  expectedChannel = text;\n  cy.log(\"Captured channel:\", expectedChannel);\n});\n_youtubePage.default.clickVideo(2);\ncy.wait(2000);\ncy.get('ytd-watch-metadata').as(\"selected\");\n_youtubePage.default.verifyTitle(\"@selected\").invoke(\"text\").then(text => {\n  resultTitle = text.replace('kr', '').replace('\\u00A0', '').trim();\n  cy.log(\"Captured title:\", resultTitle);\n  expect(expectedTitle).to.eq(resultTitle);\n});\n_youtubePage.default.verifyChannel(\"@selected\").invoke(\"text\").then(text => {\n  resultChannel = text;\n  cy.log(\"Captured channel:\", resultChannel);\n  expect(expectedChannel).to.eq(resultChannel);\n});",
+              "err": {},
+              "uuid": "9b5ae555-6b9d-4758-bdcd-3f1205a8e265",
+              "parentUUID": "6381f9a2-d554-4fb0-ba5b-2bdcf8b24cb8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9b5ae555-6b9d-4758-bdcd-3f1205a8e265"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13921,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
