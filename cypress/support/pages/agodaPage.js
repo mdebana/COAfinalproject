@@ -103,17 +103,15 @@ class AgodaPage {
 	}
 
 	clickAddons() {
-		cy.get('[data-component="flight-continue-to-addOns-button"]', { timeout: 10000 }).click({ force: true });
+		cy.contains("Continue to add-ons").click({ force: true });
 	}
 
 	clickProtection() {
-		cy.contains("No, thanks, I’ll risk it.", { timeout: 10000 })
-			.should("be.visible")
-			.click({ force: true });
+		cy.contains("No, thanks, I’ll risk it.").click();
 	}
 
 	clickContinuePay() {
-		cy.contains("Continue to payment").click();
+		cy.contains("Continue to payment").click({ force: true });
 	}
 
 	clickNoUpgrade() {
