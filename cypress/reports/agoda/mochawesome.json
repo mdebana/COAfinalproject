@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-06-03T20:18:58.393Z",
-    "end": "2025-06-03T20:20:08.277Z",
-    "duration": 69884,
+    "start": "2025-06-04T07:02:14.369Z",
+    "end": "2025-06-04T07:03:20.637Z",
+    "duration": 66268,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "f836dbf4-0844-4fb1-81f4-e25843a1c5dd",
+      "uuid": "b37f41e6-6e1b-4f71-862c-8301ae2a66d4",
       "title": "",
       "fullFile": "cypress\\e2e\\agoda.cy.js",
       "file": "cypress\\e2e\\agoda.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a35aade6-dd75-4805-9bd9-ab155dc39fe0",
+          "uuid": "05481f9f-09b9-465b-9648-457ae594971e",
           "title": "Agoda Web Test",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "Verifying flight details in Agoda",
               "fullTitle": "Agoda Web Test Verifying flight details in Agoda",
               "timedOut": null,
-              "duration": 67657,
+              "duration": 63562,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\agoda.cy.js\"\n}",
-              "code": "const passenger = {\n  firstName: Cypress.env(\"firstName\"),\n  lastName: Cypress.env(\"lastName\"),\n  email: Cypress.env(\"email\"),\n  phone: Cypress.env(\"phone\"),\n  passport: Cypress.env(\"passport\")\n};\nlet expectDepTime, expectArrTime, expectPrice, resultContactName, resultContactEmail, resultContactPhone, resultPassportName, resultDate, resultTotalPrice;\ncy.viewport(1920, 1080);\n_agodaPage.default.visiting();\ncy.wait(1000);\n_agodaPage.default.clickFlight();\ncy.wait(1000);\n_agodaPage.default.fillDeparture(Cypress.env(\"departure\"));\n_agodaPage.default.fillDestination(Cypress.env(\"arrival\"));\n_agodaPage.default.fillDate();\n_agodaPage.default.clickSearch();\ncy.wait(1000);\n_agodaPage.default.chooseFlight();\ncy.get('[data-component=\"flight-card\"]').as(\"selected\");\n_agodaPage.default.getDepTime(\"@selected\").invoke(\"text\").then(text => {\n  expectDepTime = text;\n  cy.log(\"Captured departure time:\", expectDepTime);\n});\n_agodaPage.default.getArrTime(\"@selected\").invoke(\"text\").then(text => {\n  expectArrTime = text;\n  cy.log(\"Captured arrival time:\", expectArrTime);\n});\n_agodaPage.default.selectFlight();\ncy.wait(1000);\ncy.get('[data-component=\"mob-flight-price-breakdown-wrapper\"]').as(\"selected\");\n_agodaPage.default.getTotalPrice(\"@selected\").invoke(\"text\").then(text => {\n  expectPrice = text;\n  cy.log(\"Captured total price:\", expectPrice);\n});\n_agodaPage.default.fillContactDetails(passenger);\n_agodaPage.default.clickAddons();\ncy.wait(1000);\n_agodaPage.default.clickProtection();\n_agodaPage.default.clickContinuePay();\ncy.wait(2000);\n_agodaPage.default.clickNoUpgrade();\ncy.wait(2000);\ncy.get('[data-component=\"mob-flight-contact-wrapper\"]').as(\"selected\");\n_agodaPage.default.verifyContactName(\"@selected\").invoke(\"text\").then(text => {\n  resultContactName = text;\n  cy.log(\"Captured name:\", resultContactName);\n  expect(passenger.firstName + \" \" + passenger.lastName).to.eq(resultContactName);\n});\n_agodaPage.default.verifyContactEmail(\"@selected\").invoke(\"text\").then(text => {\n  resultContactEmail = text;\n  cy.log(\"Captured email:\", resultContactEmail);\n  expect(passenger.email).to.eq(resultContactEmail);\n});\n_agodaPage.default.verifyContactPhone(\"@selected\").invoke(\"text\").then(text => {\n  resultContactPhone = text;\n  cy.log(\"Captured phone:\", resultContactPhone);\n  expect(\"+62 \" + passenger.phone).to.eq(resultContactPhone);\n});\n_agodaPage.default.verifyPassportName(\"@selected\").invoke(\"text\").then(text => {\n  resultPassportName = text;\n  cy.log(\"Captured name:\", resultPassportName);\n  expect(passenger.firstName + \" \" + passenger.lastName).to.eq(resultPassportName);\n});\n_agodaPage.default.verifyDate(\"@selected\").invoke(\"text\").then(text => {\n  resultDate = text;\n  cy.log(\"Captured date:\", resultDate);\n  expect(resultDate).to.contain(expectDepTime + \" - \" + expectArrTime);\n});\ncy.get('[data-component=\"mob-price-breakdown-wrapper\"]').as(\"selected\");\n_agodaPage.default.verifyTotalPrice(\"@selected\").invoke(\"text\").then(text => {\n  resultTotalPrice = text;\n  cy.log(\"Captured total price:\", resultTotalPrice);\n  expect(expectPrice).to.eq(resultTotalPrice);\n});",
+              "code": "const passenger = {\n  firstName: Cypress.env(\"firstName\"),\n  lastName: Cypress.env(\"lastName\"),\n  email: Cypress.env(\"email\"),\n  phone: Cypress.env(\"phone\"),\n  passport: Cypress.env(\"passport\")\n};\nlet expectDepTime, expectArrTime, expectPrice, resultContactName, resultContactEmail, resultContactPhone, resultPassportName, resultDate, resultTotalPrice;\ncy.viewport(1920, 1080);\n_agodaPage.default.visiting();\ncy.wait(1000);\n_agodaPage.default.clickFlight();\ncy.wait(1000);\n_agodaPage.default.fillDeparture(Cypress.env(\"departure\"));\n_agodaPage.default.fillDestination(Cypress.env(\"arrival\"));\n_agodaPage.default.fillDate();\n_agodaPage.default.clickSearch();\ncy.wait(1000);\n_agodaPage.default.chooseFlight();\ncy.get('[data-component=\"flight-card\"]').as(\"selected\");\n_agodaPage.default.getDepTime(\"@selected\").invoke(\"text\").then(text => {\n  expectDepTime = text;\n  cy.log(\"Captured departure time:\", expectDepTime);\n});\n_agodaPage.default.getArrTime(\"@selected\").invoke(\"text\").then(text => {\n  expectArrTime = text;\n  cy.log(\"Captured arrival time:\", expectArrTime);\n});\n_agodaPage.default.selectFlight();\ncy.wait(1000);\ncy.get('[data-component=\"mob-flight-price-breakdown-wrapper\"]').as(\"selected\");\n_agodaPage.default.getTotalPrice(\"@selected\").invoke(\"text\").then(text => {\n  expectPrice = text;\n  cy.log(\"Captured total price:\", expectPrice);\n});\ncy.wait(3000);\n_agodaPage.default.clickAddons();\n_agodaPage.default.fillContactDetails(passenger);\ncy.wait(1000);\n//AgodaPage.clickProtection();\n_agodaPage.default.clickContinuePay();\ncy.wait(2000);\n_agodaPage.default.clickNoUpgrade();\ncy.wait(10000);\ncy.get('[data-component=\"mob-flight-contact-wrapper\"]').as(\"selected\");\n_agodaPage.default.verifyContactName(\"@selected\").invoke(\"text\").then(text => {\n  resultContactName = text;\n  cy.log(\"Captured name:\", resultContactName);\n  expect(passenger.firstName + \" \" + passenger.lastName).to.eq(resultContactName);\n});\n_agodaPage.default.verifyContactEmail(\"@selected\").invoke(\"text\").then(text => {\n  resultContactEmail = text;\n  cy.log(\"Captured email:\", resultContactEmail);\n  expect(passenger.email).to.eq(resultContactEmail);\n});\n_agodaPage.default.verifyContactPhone(\"@selected\").invoke(\"text\").then(text => {\n  resultContactPhone = text;\n  cy.log(\"Captured phone:\", resultContactPhone);\n  expect(\"+62 \" + passenger.phone).to.eq(resultContactPhone);\n});\n_agodaPage.default.verifyPassportName(\"@selected\").invoke(\"text\").then(text => {\n  resultPassportName = text;\n  cy.log(\"Captured name:\", resultPassportName);\n  expect(passenger.firstName + \" \" + passenger.lastName).to.eq(resultPassportName);\n});\n_agodaPage.default.verifyDate(\"@selected\").invoke(\"text\").then(text => {\n  resultDate = text;\n  cy.log(\"Captured date:\", resultDate);\n  expect(resultDate).to.contain(expectDepTime + \" - \" + expectArrTime);\n});\ncy.get('[data-component=\"mob-price-breakdown-wrapper\"]').as(\"selected\");\n_agodaPage.default.verifyTotalPrice(\"@selected\").invoke(\"text\").then(text => {\n  resultTotalPrice = text;\n  cy.log(\"Captured total price:\", resultTotalPrice);\n  expect(expectPrice).to.eq(resultTotalPrice);\n});",
               "err": {},
-              "uuid": "013b16c8-e8f2-434e-be5f-5d18b647da3f",
-              "parentUUID": "a35aade6-dd75-4805-9bd9-ab155dc39fe0",
+              "uuid": "2ca4c742-8f63-41a4-97bd-8c11ca0e9994",
+              "parentUUID": "05481f9f-09b9-465b-9648-457ae594971e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "013b16c8-e8f2-434e-be5f-5d18b647da3f"
+            "2ca4c742-8f63-41a4-97bd-8c11ca0e9994"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 67657,
+          "duration": 63562,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

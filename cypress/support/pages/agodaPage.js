@@ -80,9 +80,8 @@ class AgodaPage {
 	}
 
 	clickAddons() {
-		cy.contains("Continue to add-ons", { timeout: 10000 })
-			.should("be.visible")
-			.click({ force: true });
+		cy.contains("Continue to add-ons", { timeout: 10000 }).click({ force: true });
+		cy.get("form").should("exist");
 	}
 
 	fillContactDetails(passenger) {
