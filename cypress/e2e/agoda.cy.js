@@ -60,7 +60,8 @@ describe("Agoda Web Test", function () {
                 expectPrice = text;
                 cy.log("Captured total price:", expectPrice);
             });
-            
+    
+    cy.wait(3000)
     AgodaPage.clickAddons();
     AgodaPage.fillContactDetails(passenger);
 
