@@ -65,7 +65,7 @@ describe("Agoda Web Test", function () {
     AgodaPage.fillContactDetails(passenger);
 
     cy.wait(1000);
-    AgodaPage.clickProtection();
+    //AgodaPage.clickProtection();
     AgodaPage.clickContinuePay();
     
     cy.wait(2000);

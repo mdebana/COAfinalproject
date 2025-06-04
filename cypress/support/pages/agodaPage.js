@@ -109,7 +109,7 @@ class AgodaPage {
 	*/}
 
 	clickProtection() {
-		cy.contains("No, thanks, I’ll risk it.", { timeout: 10000 }).click({ force: true });
+		cy.contains("No, thanks, I’ll risk it.", { timeout: 10000 }).click();
 	}
 
 	clickContinuePay() {
