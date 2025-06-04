@@ -71,7 +71,7 @@ describe("Agoda Web Test", function () {
     cy.wait(2000);
     AgodaPage.clickNoUpgrade();
 
-    cy.wait(2000);
+    cy.wait(10000);
     cy.get('[data-component="mob-flight-contact-wrapper"]').as("selected");
     AgodaPage.verifyContactName("@selected")
             .invoke("text")
