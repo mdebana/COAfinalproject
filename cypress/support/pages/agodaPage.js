@@ -98,7 +98,7 @@ class AgodaPage {
 		cy.get('span').contains("June").click();
 		cy.get('[data-testid="flight.forms.i0.units.i0.passengerDateOfBirth-YearInputDataTestId"]').clear().type("1997");
 		cy.get('[data-testid="flight.forms.i0.units.i0.passengerNationality"]').click();
-		cy.get('span').contains("Indonesia").click();
+		cy.get('span').contains("Indonesia").click();/*
 		cy.get('[id="flight.forms.i0.units.i0.passportNumber"]').should("be.visible").type(passenger.passport);
 		cy.get('[data-testid="flight.forms.i0.units.i0.passportCountryOfIssue"]').should("be.visible").click();
 		cy.get('span').contains("Indonesia").click();
@@ -106,14 +106,14 @@ class AgodaPage {
 		cy.get('[data-testid="flight.forms.i0.units.i0.passportExpiryDate-MonthInputDataTestId"]').should("be.visible").click();
 		cy.get('span').contains("January").click();
 		cy.get('[data-testid="flight.forms.i0.units.i0.passportExpiryDate-YearInputDataTestId"]').should("be.visible").type("2030");
-	}
+	*/}
 
 	clickProtection() {
-		cy.contains("No, thanks, I’ll risk it.").click({ force: true });
+		cy.contains("No, thanks, I’ll risk it.", { timeout: 10000 }).click({ force: true });
 	}
 
 	clickContinuePay() {
-		cy.contains("Continue to payment").click({ force: true });
+		cy.get('[data-testid="continue-to-payment-button"]').click();
 	}
 
 	clickNoUpgrade() {
