@@ -32,7 +32,7 @@ jobs:
         run: ls -lah node_modules/.bin/
 
       - name: Run Cypress tests
-        run: ./node_modules/.bin/cypress run --spec ./cypress/e2e/agoda.cy.js
+        run: ./node_modules/.bin/cypress run
 
       - name: Upload Cypress Videos
         if: always()
