@@ -25,7 +25,7 @@ class AmazonPage {
 	}
 
 	getPrice(itemPrice) {
-		return cy.get(itemPrice).find(".a-price-whole").first();
+		return cy.get(itemPrice).find('[class="a-price-whole"]').first();
 	}
 
 	clickItem() {
