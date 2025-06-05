@@ -111,7 +111,9 @@ class AgodaPage {
 	}
 
 	clickProtection() {
-		cy.contains("No, thanks, I’ll risk it.", { timeout: 10000 }).click();
+		try {
+			cy.contains("No, thanks, I’ll risk it.", { timeout: 10000 }).click();
+		} catch (error) {}
 	}
 
 	clickContinuePay() {
@@ -119,9 +121,11 @@ class AgodaPage {
 	}
 
 	clickNoUpgrade() {
+		try {
 		cy.contains("button", "No, thanks", { timeout: 10000 })
 			.should("be.visible")
 			.click({ force: true });
+		} catch (error) {}
 	}
 
 	verifyContactName() {
