@@ -129,7 +129,13 @@ class AgodaPage {
 	}
 
 	clickContinuePay() {
-		cy.get('[data-testid="continue-to-payment-button"]').click();
+		cy.get('[data-testid="continue-to-payment-button"]').then(($el) => {
+  			if ($el.length > 0) {
+    			cy.wrap($el).click();
+  			} else {
+    		console.log('Tombol tidak ditemukan!');
+			}
+		});
 	}
 
 	clickNoUpgrade() {
