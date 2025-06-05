@@ -82,7 +82,7 @@ class AgodaPage {
 	clickAddons() {
 		cy.get('[data-component="flight-continue-to-addOns-button"]').then(($el) => {
   			if ($el.length > 0) {
-    			cy.wrap($el).click();
+    			cy.wrap($el).click({ force: true });
   			} else {
     		console.log('Tombol tidak ditemukan!');
 			}
