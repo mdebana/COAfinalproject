@@ -35,7 +35,7 @@ jobs:
         run: ./node_modules/.bin/cypress run
 
       - name: Upload Cypress Videos
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cypress-videos
           path: cypress/videos/
