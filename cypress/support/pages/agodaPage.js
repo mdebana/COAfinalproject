@@ -139,16 +139,14 @@ class AgodaPage {
 	}
 
 	clickNoUpgrade() {
-		cy.get('[data-component="last-chance-decline-button"]')
-		//cy.contains("button", "No, thanks", { timeout: 10000 })
-			.should("be.visible")
-			.then(($el) => {
+		cy.get('[data-component="last-chance-decline-button"]').then(($el) => {
   			if ($el.length > 0) {
     			cy.wrap($el).click();
   			} else {
     		console.log('Tombol tidak ditemukan!');
 			}
 		});
+		//cy.contains("button", "No, thanks", { timeout: 10000 })
 	}
 
 	verifyContactName() {
