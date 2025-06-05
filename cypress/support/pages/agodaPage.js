@@ -114,7 +114,8 @@ class AgodaPage {
 
 	clickProtection() {
 		try {
-			cy.contains("No, thanks, I’ll risk it.", { timeout: 10000 }).click();
+			cy.get('[data-testid="radio-button-option-no"]', {timeout: 10000}).click();
+			//cy.contains("No, thanks, I’ll risk it.", { timeout: 10000 }).click();
 		} catch (error) {}
 	}
 
