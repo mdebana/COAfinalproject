@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-06-04T07:03:23.720Z",
-    "end": "2025-06-04T07:03:47.163Z",
-    "duration": 23443,
+    "start": "2025-06-05T17:01:22.037Z",
+    "end": "2025-06-05T17:01:46.271Z",
+    "duration": 24234,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a7cf80c0-6007-4a43-9ebd-ae569580e9e6",
+      "uuid": "2025c51a-fa66-43ab-bdd6-7b9e3ec2627f",
       "title": "",
       "fullFile": "cypress\\e2e\\amazon.cy.js",
       "file": "cypress\\e2e\\amazon.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7e638c5a-52d5-4bdd-b29d-a874bd243f3b",
+          "uuid": "a43b65e6-84e5-458a-b473-762844989ddf",
           "title": "Amazon Web Test",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Verifying the most right item on Amazon",
               "fullTitle": "Amazon Web Test Verifying the most right item on Amazon",
               "timedOut": null,
-              "duration": 19594,
+              "duration": 20713,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\amazon.cy.js\"\n}",
               "code": "let expectedName, expectedPrice, resultName, resultPrice;\ncy.viewport(1920, 1080);\n_amazonPage.default.visiting();\ncy.wait(1000);\n_amazonPage.default.searching();\ncy.wait(1000);\n_amazonPage.default.sortingHighLow();\ncy.wait(1000);\n_amazonPage.default.getSearch().as('selected');\n_amazonPage.default.getName(\"@selected\").invoke(\"text\").then(text => {\n  expectedName = text;\n  cy.log(\"Captured name:\", expectedName);\n});\n_amazonPage.default.getPrice(\"@selected\").invoke(\"text\").then(text => {\n  expectedPrice = text;\n  cy.log(\"Captured price:\", expectedPrice);\n});\n_amazonPage.default.clickItem();\n_amazonPage.default.verifyName().invoke(\"text\").then(text => {\n  resultName = text.replace('kr', '').replace('\\u00A0', '').trim();\n  cy.log(\"Captured name:\", resultName);\n  expect(expectedName).to.eq(resultName);\n});\n_amazonPage.default.verifyPrice().invoke(\"text\").then(text => {\n  resultPrice = text;\n  cy.log(\"Captured price:\", resultPrice);\n  expect(expectedPrice).to.eq(resultPrice);\n});",
               "err": {},
-              "uuid": "09b1c048-adf6-4d79-86cb-9affce56165e",
-              "parentUUID": "7e638c5a-52d5-4bdd-b29d-a874bd243f3b",
+              "uuid": "e89306f7-b310-4099-951d-716626c54cf1",
+              "parentUUID": "a43b65e6-84e5-458a-b473-762844989ddf",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "09b1c048-adf6-4d79-86cb-9affce56165e"
+            "e89306f7-b310-4099-951d-716626c54cf1"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 19594,
+          "duration": 20713,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

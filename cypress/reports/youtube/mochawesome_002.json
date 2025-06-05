@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-06-04T07:03:49.910Z",
-    "end": "2025-06-04T07:04:05.619Z",
-    "duration": 15709,
+    "start": "2025-06-05T17:01:49.028Z",
+    "end": "2025-06-05T17:02:04.338Z",
+    "duration": 15310,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "2d359bd4-b75b-4256-8dae-5c4c29781a9a",
+      "uuid": "7fd18fe7-4497-47d9-9c4a-5714f83ce0c0",
       "title": "",
       "fullFile": "cypress\\e2e\\youtube.cy.js",
       "file": "cypress\\e2e\\youtube.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "27dcfb96-a219-429e-87d2-8e144c8daaeb",
+          "uuid": "85551c36-3454-4bf6-9c0f-71233e08e176",
           "title": "Youtube Web Test",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Verifying trending video number 3 on Youtube",
               "fullTitle": "Youtube Web Test Verifying trending video number 3 on Youtube",
               "timedOut": null,
-              "duration": 12922,
+              "duration": 12472,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\youtube.cy.js\"\n}",
               "code": "let expectedTitle, expectedChannel, resultTitle, resultChannel;\n_youtubePage.default.visiting();\ncy.wait(1000);\n_youtubePage.default.clickTrending();\ncy.wait(1000);\n_youtubePage.default.clickMovies();\ncy.wait(2000);\n_youtubePage.default.getVideo(2).as(\"selected\");\n_youtubePage.default.getTitle(\"@selected\").invoke(\"text\").then(text => {\n  expectedTitle = text.replace('kr', '').replace('\\u00A0', '').trim();\n  cy.log(\"Captured title:\", expectedTitle);\n});\n_youtubePage.default.getChannel(\"@selected\").invoke(\"text\").then(text => {\n  expectedChannel = text;\n  cy.log(\"Captured channel:\", expectedChannel);\n});\n_youtubePage.default.clickVideo(2);\ncy.wait(2000);\ncy.get('ytd-watch-metadata').as(\"selected\");\n_youtubePage.default.verifyTitle(\"@selected\").invoke(\"text\").then(text => {\n  resultTitle = text.replace('kr', '').replace('\\u00A0', '').trim();\n  cy.log(\"Captured title:\", resultTitle);\n  expect(expectedTitle).to.eq(resultTitle);\n});\n_youtubePage.default.verifyChannel(\"@selected\").invoke(\"text\").then(text => {\n  resultChannel = text;\n  cy.log(\"Captured channel:\", resultChannel);\n  expect(expectedChannel).to.eq(resultChannel);\n});",
               "err": {},
-              "uuid": "07f59ced-32d5-47cb-9e36-4479bdd67f7b",
-              "parentUUID": "27dcfb96-a219-429e-87d2-8e144c8daaeb",
+              "uuid": "b30bbae3-3201-4943-98a8-286001e74040",
+              "parentUUID": "85551c36-3454-4bf6-9c0f-71233e08e176",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "07f59ced-32d5-47cb-9e36-4479bdd67f7b"
+            "b30bbae3-3201-4943-98a8-286001e74040"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 12922,
+          "duration": 12472,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
