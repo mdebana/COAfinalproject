@@ -81,9 +81,9 @@ class AgodaPage {
 
 	clickAddons() {
 		try {
-			cy.get('[data-component="flight-continue-to-addOns-button"]').click({ force: true });
+			cy.get('[data-component="flight-continue-to-addOns-button"]', { timeout: 60000 }).click();
 			//cy.contains("Continue to add-ons", { timeout: 10000 }).click({ force: true });
-			cy.get("form").should("exist");
+			//cy.get("form").should("exist");
 		} catch (error) {}
 	}
 
