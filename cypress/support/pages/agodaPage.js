@@ -80,11 +80,15 @@ class AgodaPage {
 	}
 
 	clickAddons() {
-		try {
-			cy.get('[data-component="flight-continue-to-addOns-button"]', { timeout: 60000 }).click();
-			//cy.contains("Continue to add-ons", { timeout: 10000 }).click({ force: true });
-			//cy.get("form").should("exist");
-		} catch (error) {}
+		cy.get('[data-component="flight-continue-to-addOns-button"]').then(($el) => {
+  			if ($el.length > 0) {
+    			cy.wrap($el).click();
+  			} else {
+    		console.log('Tombol tidak ditemukan!');
+			}
+		});
+		//cy.contains("Continue to add-ons", { timeout: 10000 }).click({ force: true });
+		//cy.get("form").should("exist");
 	}
 
 	fillContactDetails(passenger) {
@@ -114,10 +118,14 @@ class AgodaPage {
 	}
 
 	clickProtection() {
-		try {
-			cy.get('[data-testid="radio-button-option-no"]', {timeout: 10000}).click();
-			//cy.contains("No, thanks, I’ll risk it.", { timeout: 10000 }).click();
-		} catch (error) {}
+		cy.get('[data-testid="radio-button-option-no"]').then(($el) => {
+  			if ($el.length > 0) {
+    			cy.wrap($el).click();
+  			} else {
+    		console.log('Tombol tidak ditemukan!');
+			}
+		});
+		//cy.contains("No, thanks, I’ll risk it.", { timeout: 10000 }).click();
 	}
 
 	clickContinuePay() {
@@ -125,11 +133,15 @@ class AgodaPage {
 	}
 
 	clickNoUpgrade() {
-		try {
 		cy.contains("button", "No, thanks", { timeout: 10000 })
 			.should("be.visible")
-			.click();
-		} catch (error) {}
+			.then(($el) => {
+  			if ($el.length > 0) {
+    			cy.wrap($el).click();
+  			} else {
+    		console.log('Tombol tidak ditemukan!');
+			}
+		});
 	}
 
 	verifyContactName() {
