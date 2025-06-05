@@ -70,7 +70,7 @@ describe("Agoda Web Test", function () {
     AgodaPage.clickContinuePay();
     
     cy.wait(2000);
-    AgodaPage.clickNoUpgrade();
+   // AgodaPage.clickNoUpgrade();
 
     cy.wait(10000);
     cy.get('[data-component="mob-flight-contact-wrapper"]').as("selected");
