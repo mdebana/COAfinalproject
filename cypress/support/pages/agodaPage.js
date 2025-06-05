@@ -95,6 +95,8 @@ class AgodaPage {
 		cy.get('[id="contact.contactFirstName"]').clear().type(passenger.firstName);
 		cy.get('[id="contact.contactLastName"]').clear().type(passenger.lastName);
 		cy.get('[id="contact.contactEmail"]').clear().type(passenger.email);
+		cy.get('[data-testid="contact.contactPhoneNumber-CountryCodeDataTestId"]').click()
+		cy.get('span').contains("Indonesia").click();
 		cy.get('[id="contact.contactPhoneNumber"]').clear().type(passenger.phone);
 		cy.get('[data-testid="0"]').children().first().click({ force: true });
 		cy.get('[id="flight.forms.i0.units.i0.passengerFirstName"]').clear().type(passenger.firstName);
